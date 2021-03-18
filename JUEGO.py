@@ -75,7 +75,8 @@ def move():
     ### Función para terminar el juego ###
     for target in targets:
         if not inside(target):
-            return
+    ### Ubicacion que aparece la bola una vez que sale de la pantalla        
+           target.x=200
 
 
     ### Definir la velocidad del juego ###
@@ -89,3 +90,5 @@ tracer(False)
 onscreenclick(tap)
 move()
 done()
+
+
