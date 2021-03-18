@@ -17,7 +17,7 @@ def tap(x, y):
         speed.x = (x + 200) / 25
         speed.y = (y + 200) / 25
 
-###Funcion para hacer que la bola permanesca dentro de la pantalla
+###Funcion que se asegura de que la bola este dentro de la pantalla
 def inside(xy):
     "Return True if xy within screen."
     return -200 < xy.x < 200 and -200 < xy.y < 200
@@ -64,7 +64,7 @@ def move():
         if not inside(target):
             return
 
-    ### Definir el movimiento de los "Tragets"
+    ### Definir la velocidad del juego
     ontimer(move, 50)
 
 setup(420, 420, 370, 0)
