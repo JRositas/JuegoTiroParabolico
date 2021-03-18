@@ -14,8 +14,8 @@ def tap(x, y):
     if not inside(ball):
         ball.x = -199
         ball.y = -199
-        speed.x = (x + 200) / 25
-        speed.y = (y + 200) / 25
+        speed.x = (x + 300) / 25
+        speed.y = (y + 300) / 25
 
 ###Funcion que se asegura de que la bola este dentro de la pantalla
 def inside(xy):
@@ -51,8 +51,9 @@ def move():
 
     ###Movimiento Horizontal del Target
     for target in targets:
-        target.x -= 0.5
-    ###Movimiento del proyectil
+        target.x -= 3
+        
+          ###Movimiento del proyectil
     if inside(ball):
         speed.y -= 0.35
         ball.move(speed)
@@ -73,8 +74,10 @@ def move():
         if not inside(target):
             return
 
+
     ### Definir la velocidad del juego ###
-    ontimer(move, 50)
+    ontimer(move, 30)
+
 
 setup(420, 420, 370, 0)
 hideturtle()
