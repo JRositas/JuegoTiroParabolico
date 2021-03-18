@@ -1,11 +1,14 @@
+###importando herramientas necesarias
 from random import randrange
 from turtle import *
 from freegames import vector
 
+###Establecer los cuerpos del juego (la bola y su dirección)
 ball = vector(-200, -200)
 speed = vector(0, 0)
 targets = []
 
+###Funcion para Interacción con el juego
 def tap(x, y):
     "Respond to screen tap."
     if not inside(ball):
@@ -14,10 +17,12 @@ def tap(x, y):
         speed.x = (x + 200) / 25
         speed.y = (y + 200) / 25
 
+###Funcion para hacer que la bola permanesca dentro de la pantalla
 def inside(xy):
     "Return True if xy within screen."
     return -200 < xy.x < 200 and -200 < xy.y < 200
 
+###Funcion para crear los cuerpos y definir su comportamiento
 def draw():
     "Draw ball and targets."
     clear()
@@ -59,6 +64,7 @@ def move():
         if not inside(target):
             return
 
+    ### Definir el movimiento de los "Tragets"
     ontimer(move, 50)
 
 setup(420, 420, 370, 0)
