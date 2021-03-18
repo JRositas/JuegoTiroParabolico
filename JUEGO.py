@@ -26,34 +26,42 @@ def inside(xy):
 def draw():
     "Draw ball and targets."
     clear()
-
+    
+    ###Definir color y figura del target
     for target in targets:
         goto(target.x, target.y)
         dot(20, 'blue')
 
+    ###Definir color y figura del proyectil
     if inside(ball):
         goto(ball.x, ball.y)
         dot(6, 'red')
 
     update()
 
+###Función para definir el movimiento de los objetos
 def move():
     "Move ball and targets."
+    
+    ###Definir posicion del Target
     if randrange(40) == 0:
         y = randrange(-150, 150)
         target = vector(200, y)
         targets.append(target)
 
+    ###Movimiento Horizontal del Target
     for target in targets:
         target.x -= 0.5
-
+    ###Movimiento del proyectil
     if inside(ball):
         speed.y -= 0.35
         ball.move(speed)
 
+        
     dupe = targets.copy()
     targets.clear()
 
+    ###Destrucción de target por el proyectil
     for target in dupe:
         if abs(target - ball) > 13:
             targets.append(target)
