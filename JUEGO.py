@@ -60,11 +60,12 @@ def move():
 
     draw()
 
+    ### Función para terminar el juego ###
     for target in targets:
         if not inside(target):
             return
 
-    ### Definir la velocidad del juego
+    ### Definir la velocidad del juego ###
     ontimer(move, 50)
 
 setup(420, 420, 370, 0)
