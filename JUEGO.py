@@ -1,6 +1,8 @@
 ###Codigo de Juego de Tiro Parabolico
 ###Equipo 2: José Arnoldo Rositas, Sergio Cárdenas, Pablo Yesaki
 
+###Comentario de Prueba
+
 ###importando herramientas necesarias
 from random import randrange
 from turtle import *
